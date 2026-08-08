@@ -15,6 +15,14 @@ Add `nix-grove` as a non-flake source, then import its module file directly:
 }
 ```
 
+In your `flake-parts` module:
+
+```nix
+{
+  imports = [ (inputs.nix-grove + "/grove.nix") ];
+}
+```
+
 Alternatively, omit `flake = false` and import the exported module:
 
 ```nix
