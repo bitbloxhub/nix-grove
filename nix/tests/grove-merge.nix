@@ -164,7 +164,11 @@
       checks = lib.mapAttrs (
         name: test:
         pkgs.runCommand "grove-${name}" { } (
-          assert lib.runTests { ${name} = test; } == [ ];
+          assert
+            lib.runTests {
+              ${name} = test;
+              tests = [ name ];
+            } == [ ];
           ''
             touch "$out"
           ''

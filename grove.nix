@@ -5,7 +5,8 @@
 }:
 let
   inherit (lib) mkOption types;
-  finalizeClass = class: projectors: lib.mapAttrs (finalizeProjection class) projectors;
+  finalizeClass =
+    class: projectors: lib.mapAttrs (projection: _: finalizeProjection class projection) projectors;
   finalizeInstance =
     class: projection: name: instance:
     let
