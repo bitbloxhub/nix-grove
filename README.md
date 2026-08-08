@@ -37,7 +37,6 @@ After choosing either import form above, configure Grove in your `flake-parts` m
 
 ```nix
 {
-
   flake.grove = {
     types.hosts =
       {
