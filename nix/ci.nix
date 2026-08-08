@@ -146,7 +146,7 @@
       make-shells.default.packages = [ inputs'.junix.packages.default ];
       packages.write-gha = pkgs.writeShellScriptBin "write-gha" ''
         mkdir -p .github/workflows
-        cp -r ${config.githubActions.workflowsDir}/. .github/workflows/
+        cp -r --no-preserve=mode ${config.githubActions.workflowsDir}/. .github/workflows/
       '';
     };
 }
